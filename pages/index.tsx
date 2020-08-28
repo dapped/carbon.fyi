@@ -13,7 +13,7 @@ export default function Home() {
         </h1>
 
         <p>
-          In progress...
+          <a href="https://gitlab.com/de-souza/carbon.fyi/">In progress...</a>
         </p>
       </main>
     </>
