@@ -35,7 +35,7 @@ const Emissions: React.FC<{ address: string }> = ({ address }) => {
       <p>These transactions used {gas} gas.</p>
       <p>
         This emitted the equivalent of {Math.round(gas * KGCO2_PER_GAS)} kg of
-        CO₂.
+        CO₂ in the atmosphere.
       </p>
     </>
   );
