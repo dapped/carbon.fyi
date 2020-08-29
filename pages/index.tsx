@@ -25,7 +25,7 @@ const Emissions: React.FC<{ address: string }> = ({ address }) => {
   if (data.status == 0) return <p>{data.result}</p>;
 
   const sent = data.result.filter(
-    (cur: Transaction) => cur.from.toLowerCase() == address
+    (cur: Transaction) => cur.from == address.toLowerCase()
   );
   const gas = getGas(sent);
   const kgco2 = Math.round(gas * KGCO2_PER_GAS);
