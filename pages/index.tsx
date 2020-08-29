@@ -1,6 +1,21 @@
-import Head from 'next/head'
+import Head from "next/head"
+import { useRouter } from "next/router"
 
-export default function Home() {
+const Emissions: React.FC<{ address: string }> = ({ address }) => (
+  <p>Emissions by <em>{address}</em>:</p>
+)
+
+const Form: React.FC = () => (
+  <form>
+    <label>Address:
+      <input type="text" name="a"></input>
+    </label>
+  </form>
+)
+
+const Home: React.FC = () => {
+  const router = useRouter();
+  const address = router.query.a;
   return (
     <>
       <Head>
@@ -9,13 +24,19 @@ export default function Home() {
 
       <main>
         <h1>
-          Welcome to carbon.fyi
+          Calculate ETH Emissions
         </h1>
 
-        <p>
-          <a href="https://gitlab.com/de-souza/carbon.fyi/">In progress...</a>
-        </p>
+        { address ? <Emissions address={ address.toString() } /> : <Form /> }
       </main>
+
+      <footer>
+        <p>
+          <a href="https://gitlab.com/de-souza/carbon.fyi/">In progress</a>
+        </p>
+      </footer>
     </>
   )
 }
+
+export default Home
