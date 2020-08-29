@@ -24,8 +24,11 @@ const Emissions: React.FC<{ address: string }> = ({ address }) => {
   if (!data) return <p>Fetching data...</p>;
   if (data.status == 0) return <p>{data.result}</p>;
 
-  const sent = data.result.filter((cur: Transaction) => cur.from == address);
+  const sent = data.result.filter(
+    (cur: Transaction) => cur.from.toLowerCase() == address
+  );
   const gas = getGas(sent);
+  const kgco2 = Math.round(gas * KGCO2_PER_GAS);
 
   return (
     <>
@@ -34,8 +37,7 @@ const Emissions: React.FC<{ address: string }> = ({ address }) => {
       </p>
       <p>These transactions consumed {gas} gas.</p>
       <p>
-        This emitted the equivalent of {Math.round(gas * KGCO2_PER_GAS)} kg of
-        CO₂ in the atmosphere.
+        This emitted the equivalent of {kgco2} kg of CO₂ into the atmosphere.
       </p>
     </>
   );
@@ -61,11 +63,7 @@ const Home: React.FC = () => {
       </Head>
 
       <main>
-        {address ? (
-          <Emissions address={address.toString().toLowerCase()} />
-        ) : (
-          <Form />
-        )}
+        {address ? <Emissions address={address.toString()} /> : <Form />}
       </main>
 
       <footer>
