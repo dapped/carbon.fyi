@@ -2,7 +2,7 @@ import Head from "next/head"
 import { useRouter } from "next/router"
 
 const Emissions: React.FC<{ address: string }> = ({ address }) => (
-  <p>Emissions by <em>{address}</em>:</p>
+  <p>Transactions by <em>{address}</em>:</p>
 )
 
 const Form: React.FC = () => (
@@ -23,10 +23,6 @@ const Home: React.FC = () => {
       </Head>
 
       <main>
-        <h1>
-          Calculate ETH Emissions
-        </h1>
-
         { address ? <Emissions address={ address.toString() } /> : <Form /> }
       </main>
 
