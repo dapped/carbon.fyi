@@ -27,13 +27,15 @@ const Emissions: React.FC<{ address: string }> = ({ address }) => {
   const sent = data.result.filter(
     (cur: Transaction) => cur.from == address.toLowerCase()
   );
+
+  const transactions = sent.length;
   const gas = getGas(sent);
   const kgco2 = Math.round(gas * KGCO2_PER_GAS);
 
   return (
     <>
       <p>
-        {sent.length} transactions were sent from <em>{address}</em>.
+        {transactions} transactions were sent from <em>{address}</em>.
       </p>
       <p>These transactions consumed {gas} gas.</p>
       <p>
