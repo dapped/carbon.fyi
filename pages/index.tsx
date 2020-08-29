@@ -62,7 +62,11 @@ const Home: React.FC = () => {
       </Head>
 
       <main>
-        {address ? <Emissions address={address.toString()} /> : <Form />}
+        {address ? (
+          <Emissions address={address.toString().toLowerCase()} />
+        ) : (
+          <Form />
+        )}
       </main>
 
       <footer>
