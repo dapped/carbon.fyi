@@ -33,7 +33,7 @@ const Emissions: React.FC<{ address: string }> = ({ address }) => {
   return (
     <>
       <p>
-        {sent.length} transactions were sent using <em>{address}</em>.
+        {sent.length} transactions were sent from <em>{address}</em>.
       </p>
       <p>These transactions consumed {gas} gas.</p>
       <p>
