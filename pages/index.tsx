@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import useSWR from "swr";
-import { cursorTo } from "readline";
 
 const KGCO2_PER_GAS = 0.0003100393448;
 const API_URL =
