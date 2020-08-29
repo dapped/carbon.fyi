@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 
 const KGCO2_PER_GAS = 0.0003100393448;
-const API_URL =
-  "https://api.etherscan.io/api?module=account&action=txlist&startblock=0&endblock=99999999&sort=asc&apikey=YourApiKeyToken&address=";
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
+const API_URL = `https://api.etherscan.io/api?module=account&action=txlist&startblock=0&endblock=99999999&sort=asc&apikey=${API_KEY}&address=`;
 
 interface Transaction {
   from: string;
