@@ -23,6 +23,7 @@ const Emissions: React.FC<{ address: string }> = ({ address }) => {
 
   if (error) return <p>Error fetching data.</p>;
   if (!data) return <p>Fetching data...</p>;
+  if (data.status == 0) return <p>{data.result}</p>;
 
   const sent = data.result.filter((cur: Transaction) => cur.from == address);
   const gas = getGas(sent);
