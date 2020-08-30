@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 
@@ -60,10 +59,6 @@ const Offset: React.FC = () => {
 
   return (
     <>
-      <Head>
-        <title>Calculate ETH Emissions | carbon.fyi</title>
-      </Head>
-
       <main>{address ? <Emissions address={address} /> : <Form />}</main>
 
       <footer>
