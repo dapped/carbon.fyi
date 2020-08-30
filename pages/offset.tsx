@@ -68,7 +68,7 @@ const Offset: React.FC = () => {
 
       <footer>
         <p>
-          <a href="https://gitlab.com/de-souza/carbon.fyi/">source code</a>
+          <a href="https://github.com/Offsetra/carbon.fyi/">source code</a>
         </p>
       </footer>
     </>
