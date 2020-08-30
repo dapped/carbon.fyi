@@ -1,6 +1,5 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import "../styles/globals.css";
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
   <>
@@ -9,6 +8,15 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <Component {...pageProps} />
+    <style jsx global>{`
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+          Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+    `}</style>
   </>
 );
 

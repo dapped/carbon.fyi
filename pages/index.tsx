@@ -1,25 +1,11 @@
-import Link from "next/link";
+import Menu from "components/Menu";
 
-const Home: React.FC = () => (
-  <ul className="Sections">
-    <li className="Sections-item">
-      <Link href="/stats">
-        <a className="Sections-link Sections-link--stats">stats</a>
-      </Link>
-    </li>
+const menuItemsProps = [
+  { text: "stats", link: "/stats", color: "#b3e93f" },
+  { text: "offset", link: "/offset", color: "#743ee8" },
+  { text: "about", link: "/about", color: "#fe7c6f" },
+];
 
-    <li className="Sections-item">
-      <Link href="/offset">
-        <a className="Sections-link Sections-link--offset">offset</a>
-      </Link>
-    </li>
-
-    <li className="Sections-item">
-      <Link href="/about">
-        <a className="Sections-link Sections-link--about">about</a>
-      </Link>
-    </li>
-  </ul>
-);
+const Home: React.FC = () => <Menu menuItemsProps={menuItemsProps} />;
 
 export default Home;
