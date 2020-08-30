@@ -64,9 +64,7 @@ const Offset: React.FC = () => {
         <title>Calculate ETH Emissions | carbon.fyi</title>
       </Head>
 
-      <main>
-        {address ? <Emissions address={address} /> : <Form />}
-      </main>
+      <main>{address ? <Emissions address={address} /> : <Form />}</main>
 
       <footer>
         <p>
