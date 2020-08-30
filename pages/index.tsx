@@ -56,7 +56,7 @@ const Form: React.FC = () => (
 
 const Home: React.FC = () => {
   const router = useRouter();
-  const address = router.query.a;
+  const address = router.query.a?.toString();
 
   return (
     <>
@@ -65,7 +65,7 @@ const Home: React.FC = () => {
       </Head>
 
       <main>
-        {address ? <Emissions address={address.toString()} /> : <Form />}
+        {address ? <Emissions address={address} /> : <Form />}
       </main>
 
       <footer>
