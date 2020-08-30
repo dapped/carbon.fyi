@@ -12,6 +12,14 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
+  height: 100vh;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .Sections {
+    font-size: 16vw;
+    flex-flow: column;
+  }
 }
 
 .Sections-item {
@@ -24,7 +32,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
 }
 
 .Sections-link:hover {
