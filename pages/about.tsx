@@ -10,7 +10,9 @@ export default function Offset() {
       <main>
         <Wrapper>
           <Border>
-            <p>Under construction...</p>
+            <p>
+              Open source project hosted on <a href="https://github.com/Offsetra/carbon.fyi/">GitHub</a>.
+            </p>
           </Border>
         </Wrapper>
       </main>

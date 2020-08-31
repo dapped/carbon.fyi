@@ -16,12 +16,6 @@ export default function Offset() {
       <Wrapper>
         <Border>
           <main>{address ? <Emissions address={address} /> : <Input />}</main>
-
-          <footer>
-            <p>
-              <a href="https://github.com/Offsetra/carbon.fyi/">source code</a>
-            </p>
-          </footer>
         </Border>
       </Wrapper>
       <Logo />
