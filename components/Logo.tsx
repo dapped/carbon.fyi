@@ -4,7 +4,7 @@ export default function Logo() {
       <img
         src="../images/powered_by_offsetra.png"
         alt="Powered by Offsetra"
-        width="100px"
+        width="200px"
       />
       <style jsx>{`
         img {
