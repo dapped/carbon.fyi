@@ -1,19 +1,18 @@
 import Link from "next/link";
 
-interface ItemProps {
-  text: string;
-  link: string;
-  color: string;
-  svg: React.ComponentType;
-}
-
 interface MenuProps {
   itemProps: ItemProps[];
 }
 
+interface ItemProps {
+  text: string;
+  link: string;
+  color: string;
+}
+
 export default function Menu({ itemProps }: MenuProps) {
   const menuItems = itemProps.map(({ text, link, color, svg }) => (
-    <MenuItem key={text} text={text} link={link} color={color} svg={svg} />
+    <Item key={text} text={text} link={link} color={color} />
   ));
   return (
     <>
@@ -40,14 +39,13 @@ export default function Menu({ itemProps }: MenuProps) {
   );
 }
 
-function MenuItem(props: ItemProps) {
+function Item(props: ItemProps) {
   return (
     <>
       <li>
         <Link href={props.link}>
           <a>
             {props.text}
-            {/* <props.svg /> */}
           </a>
         </Link>
       </li>
@@ -59,17 +57,17 @@ function MenuItem(props: ItemProps) {
         a {
           text-decoration: none;
           color: white;
+          background: ${props.color};
+          height: 100%;
           display: flex;
           flex-flow: column;
           align-items: center;
           justify-content: center;
-          height: 100%;
-          background: ${props.color};
         }
 
         a:hover {
-          background: white;
           color: ${props.color};
+          background: white;
         }
       `}</style>
     </>
