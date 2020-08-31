@@ -11,7 +11,7 @@ interface ItemProps {
 }
 
 export default function Menu({ itemProps }: MenuProps) {
-  const menuItems = itemProps.map(({ text, link, color, svg }) => (
+  const menuItems = itemProps.map(({ text, link, color }) => (
     <Item key={text} text={text} link={link} color={color} />
   ));
   return (
