@@ -3,7 +3,7 @@ import Wrapper from "components/Wrapper";
 import Border from "components/Border";
 import Logo from "components/Logo";
 
-export default function Offset() {
+export default function About() {
   return (
     <>
       <Banner />
