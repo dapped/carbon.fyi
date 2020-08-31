@@ -13,8 +13,9 @@ export default function Banner() {
       <style jsx>{`
         ul {
           list-style: none;
-          font-size: 6vw;
+          font-size: 1.5rem;
           font-weight: bold;
+          line-height: 4rem;
           display: flex;
           margin: 0;
           padding: 0;
