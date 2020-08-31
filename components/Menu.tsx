@@ -1,7 +1,7 @@
 import MenuItem, { MenuItemProps } from "components/MenuItem";
 
 interface MenuProps {
-  menuItemsProps: MenuItemProps[];
+  menuItemsProps: Array<MenuItemProps>;
 }
 
 export default function Menu({ menuItemsProps }: MenuProps) {

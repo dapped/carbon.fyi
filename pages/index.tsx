@@ -6,6 +6,6 @@ const menuItemsProps = [
   { text: "about", link: "/about", color: "#fe7c6f" },
 ];
 
-const Home: React.FC = () => <Menu menuItemsProps={menuItemsProps} />;
-
-export default Home;
+export default function Home() {
+  return <Menu menuItemsProps={menuItemsProps} />;
+}
