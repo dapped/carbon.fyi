@@ -16,9 +16,41 @@ export default function Emissions({ address }: EmissionsProps) {
   const api_url = `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&sort=asc&apikey=${API_KEY}`;
   const { data, error } = useSWR(api_url, fetcher);
 
-  if (error) return <p>Error fetching data.</p>;
-  if (!data) return <p>Fetching data...</p>;
-  if (data.status == 0) return <p>{data.result}</p>;
+  if (error)
+    return (
+      <p>
+        Error fetching data.
+        <style jsx>{`
+          p {
+            text-align: center;
+          }
+        `}</style>
+      </p>
+    );
+
+  if (!data)
+    return (
+      <p>
+        Fetching data...
+        <style jsx>{`
+          p {
+            text-align: center;
+          }
+        `}</style>
+      </p>
+    );
+
+  if (data.status == 0)
+    return (
+      <p>
+        {data.result}
+        <style jsx>{`
+          p {
+            text-align: center;
+          }
+        `}</style>
+      </p>
+    );
 
   const sent = data.result.filter(
     (cur: TransactionData) => cur.from == address.toLowerCase()
