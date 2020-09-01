@@ -10,7 +10,14 @@ export default function Stats() {
       <main>
         <Wrapper>
           <Border>
-            <p>Under construction...</p>
+            <p>
+              Under construction...
+              <style jsx>{`
+                p {
+                  text-align: center;
+                }
+              `}</style>
+            </p>
           </Border>
         </Wrapper>
       </main>

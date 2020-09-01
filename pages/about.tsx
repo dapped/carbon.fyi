@@ -11,7 +11,13 @@ export default function About() {
         <Wrapper>
           <Border>
             <p>
-              Open source project hosted on <a href="https://github.com/Offsetra/carbon.fyi/">GitHub</a>.
+              Powered by offsetra. Source code hosted on{" "}
+              <a href="https://github.com/Offsetra/carbon.fyi/">GitHub</a>.
+              <style jsx>{`
+                p {
+                  text-align: center;
+                }
+              `}</style>
             </p>
           </Border>
         </Wrapper>
