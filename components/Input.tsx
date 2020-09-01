@@ -24,6 +24,7 @@ export default function Input() {
         li {
           display: flex;
           flex-wrap: wrap;
+          align-items: center;
           justify-content: space-between;
           margin: 0.5rem 0;
         }
