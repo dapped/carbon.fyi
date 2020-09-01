@@ -33,12 +33,10 @@ interface ItemProps {
 
 function Item({ text, link, color }: ItemProps) {
   return (
-    <>
-      <li>
-        <Link href={link}>
-          <a>{text}</a>
-        </Link>
-      </li>
+    <li>
+      <Link href={link}>
+        <a>{text}</a>
+      </Link>
       <style jsx>{`
         li {
           flex: 1;
@@ -60,6 +58,6 @@ function Item({ text, link, color }: ItemProps) {
           background: white;
         }
       `}</style>
-    </>
+    </li>
   );
 }

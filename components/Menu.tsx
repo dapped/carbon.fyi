@@ -15,8 +15,8 @@ export default function Menu({ itemProps }: MenuProps) {
     <Item key={text} text={text} link={link} color={color} />
   ));
   return (
-    <>
-      <ul>{menuItems}</ul>
+    <ul>
+      {menuItems}
       <style jsx>{`
         ul {
           list-style: none;
@@ -35,7 +35,7 @@ export default function Menu({ itemProps }: MenuProps) {
           }
         }
       `}</style>
-    </>
+    </ul>
   );
 }
 
@@ -44,9 +44,7 @@ function Item(props: ItemProps) {
     <>
       <li>
         <Link href={props.link}>
-          <a>
-            {props.text}
-          </a>
+          <a>{props.text}</a>
         </Link>
       </li>
       <style jsx>{`
