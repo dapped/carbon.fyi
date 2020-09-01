@@ -28,12 +28,23 @@ export default function Emissions({ address }: EmissionsProps) {
   const gas = getGas(sent);
   const kgco2 = Math.round(gas * KGCO2_PER_GAS);
 
-  return (
+  return transactions ? (
     <>
-      <p>
-        {transactions} transactions were sent from <em>{address}</em>.
-      </p>
-      <p>These transactions consumed {gas} gas.</p>
+      {transactions == 1 ? (
+        <>
+          <p>
+            1 transaction was sent from <em>{address}</em>.
+          </p>
+          <p>This transaction consumed {gas} gas.</p>
+        </>
+      ) : (
+        <>
+          <p>
+            {transactions} transactions were sent from <em>{address}</em>.
+          </p>
+          <p>These transactions consumed {gas} gas.</p>
+        </>
+      )}
       <p>
         This emitted the equivalent of {kgco2} kg of CO₂ into the atmosphere.
       </p>
@@ -41,6 +52,10 @@ export default function Emissions({ address }: EmissionsProps) {
         Offset this now at <a href="https://www.offsetra.com/">Offsetra.com</a>.
       </p>
     </>
+  ) : (
+    <p>
+      0 transactions were sent from <em>{address}</em>.
+    </p>
   );
 }
 
