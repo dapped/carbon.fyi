@@ -37,6 +37,9 @@ export default function Emissions({ address }: EmissionsProps) {
       <p>
         This emitted the equivalent of {kgco2} kg of CO₂ into the atmosphere.
       </p>
+      <p>
+        Offset this now at <a href="https://www.offsetra.com/">Offsetra.com</a>.
+      </p>
     </>
   );
 }
