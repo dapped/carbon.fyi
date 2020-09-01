@@ -11,7 +11,8 @@ export default function About() {
         <Wrapper>
           <Border>
             <p>
-              Powered by offsetra. Source code hosted on{" "}
+              Powered by <a href="https://www.offsetra.com/">Offsetra</a>.
+              Source code on{" "}
               <a href="https://github.com/Offsetra/carbon.fyi/">GitHub</a>.
               <style jsx>{`
                 p {
