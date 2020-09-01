@@ -28,33 +28,44 @@ export default function Emissions({ address }: EmissionsProps) {
   const gas = getGas(sent);
   const kgco2 = Math.round(gas * KGCO2_PER_GAS);
 
-  return transactions == 0 ? (
-    <p>
-      0 transactions were sent from <em>{address}</em>.
-    </p>
-  ) : (
+  return (
     <>
-      {transactions == 1 ? (
-        <>
-          <p>
-            1 transaction was sent from <em>{address}</em>.
-          </p>
-          <p>This transaction consumed {gas} gas.</p>
-        </>
+      {transactions == 0 ? (
+        <p>
+          0 transactions were sent from <em>{address}</em>.
+        </p>
       ) : (
         <>
+          {transactions == 1 ? (
+            <>
+              <p>
+                1 transaction was sent from <em>{address}</em>.
+              </p>
+              <p>This transaction consumed {gas} gas.</p>
+            </>
+          ) : (
+            <>
+              <p>
+                {transactions} transactions were sent from <em>{address}</em>.
+              </p>
+              <p>These transactions consumed {gas} gas.</p>
+            </>
+          )}
           <p>
-            {transactions} transactions were sent from <em>{address}</em>.
+            This emitted the equivalent of {kgco2} kg of CO₂ into the
+            atmosphere.
           </p>
-          <p>These transactions consumed {gas} gas.</p>
+          <p>
+            Offset this now at{" "}
+            <a href="https://www.offsetra.com/">Offsetra.com</a>.
+          </p>
         </>
       )}
-      <p>
-        This emitted the equivalent of {kgco2} kg of CO₂ into the atmosphere.
-      </p>
-      <p>
-        Offset this now at <a href="https://www.offsetra.com/">Offsetra.com</a>.
-      </p>
+      <style jsx>{`
+        p {
+          text-align: center;
+        }
+      `}</style>
     </>
   );
 }
