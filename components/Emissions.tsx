@@ -64,21 +64,21 @@ export default function Emissions({ address }: EmissionsProps) {
     <>
       {transactions == 0 ? (
         <p>
-          0 transactions were sent from <em>{address}</em>.
+          0 transactions were sent from this address.
         </p>
       ) : (
         <>
           {transactions == 1 ? (
             <>
               <p>
-                1 transaction was sent from <em>{address}</em>.
+                1 transaction was sent from this address.
               </p>
               <p>This transaction consumed {gas} gas.</p>
             </>
           ) : (
             <>
               <p>
-                {transactions} transactions were sent from <em>{address}</em>.
+                {transactions} transactions were sent from this address.
               </p>
               <p>These transactions consumed {gas} gas.</p>
             </>
