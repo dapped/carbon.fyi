@@ -1,29 +1,20 @@
-import Banner from "components/Banner";
-import Wrapper from "components/Wrapper";
+import { useRouter } from "next/router";
 import Border from "components/Border";
-import Logo from "components/Logo";
 
-export default function About() {
+export default function Home() {
+  const router = useRouter();
+  const query = router.query.a?.toString();
   return (
-    <>
-      <Banner />
-      <main>
-        <Wrapper>
-          <Border>
-            <p>
-              Powered by <a href="https://www.offsetra.com/">Offsetra</a>.
-              Source code on{" "}
-              <a href="https://github.com/Offsetra/carbon.fyi/">GitHub</a>.
-              <style jsx>{`
-                p {
-                  text-align: center;
-                }
-              `}</style>
-            </p>
-          </Border>
-        </Wrapper>
-      </main>
-      <Logo />
-    </>
+    <Border>
+      <p>
+        Powered by <a href="https://www.offsetra.com/">Offsetra</a>. Source code
+        on <a href="https://github.com/Offsetra/carbon.fyi/">GitHub</a>.
+        <style jsx>{`
+          p {
+            text-align: center;
+          }
+        `}</style>
+      </p>
+    </Border>
   );
 }

@@ -1,23 +1,10 @@
-import Menu from "components/Menu";
-
-const statsProps = {
-  text: "stats",
-  link: "/stats",
-  color: "#b3e93f",
-};
-
-const offsetProps = {
-  text: "offset",
-  link: "/offset",
-  color: "#743ee8",
-};
-
-const aboutProps = {
-  text: "about",
-  link: "/about",
-  color: "#fe7c6f",
-};
+import { useRouter } from "next/router";
+import Border from "components/Border";
+import Emissions from "components/Emissions";
+import Input from "components/Input";
 
 export default function Home() {
-  return <Menu itemProps={[statsProps, offsetProps, aboutProps]} />;
+  const router = useRouter();
+  const query = router.query.a?.toString();
+  return <Border>{query ? <Emissions address={query} /> : <Input />}</Border>;
 }

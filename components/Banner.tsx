@@ -1,34 +1,28 @@
 import Link from "next/link";
 
-export default function Banner() {
-  return (
-    <>
-      <nav>
-        <ul>
-          <Item text="stats" link="/stats" color="#b3e93f" />
-          <Item text="offset" link="/offset" color="#743ee8" />
-          <Item text="about" link="/about" color="#fe7c6f" />
-        </ul>
-      </nav>
-      <style jsx>{`
-        ul {
-          list-style: none;
-          font-size: 1.5rem;
-          font-weight: bold;
-          line-height: 4rem;
-          display: flex;
-          margin: 0;
-          padding: 0;
-        }
-      `}</style>
-    </>
-  );
-}
-
 interface ItemProps {
   text: string;
   link: string;
   color: string;
+}
+
+export default function Banner({ bannerProps }: { bannerProps: ItemProps[] }) {
+  const createItem = ({ ...itemProps }: ItemProps) => <Item {...itemProps} />;
+  const items = bannerProps.map(createItem);
+  return (
+    <nav>
+      <ul>{items}</ul>
+      <style jsx>{`
+        ul {
+          list-style: none;
+          display: flex;
+          flex-flow: wrap;
+          margin: 0;
+          padding: 0;
+        }
+      `}</style>
+    </nav>
+  );
 }
 
 function Item({ text, link, color }: ItemProps) {
@@ -43,14 +37,14 @@ function Item({ text, link, color }: ItemProps) {
         }
 
         a {
-          text-decoration: none;
           color: white;
           background: ${color};
-          height: 100%;
+          text-decoration: none;
+          font-size: 1.25rem;
+          font-weight: bold;
           display: flex;
-          flex-flow: column;
-          align-items: center;
           justify-content: center;
+          padding: 0.5rem 1rem;
         }
 
         a:hover {
