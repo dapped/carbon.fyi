@@ -5,7 +5,6 @@ export default function Logo() {
       <style jsx>{`
         img {
           width: 10rem;
-          padding: 1rem;
         }
       `}</style>
     </a>

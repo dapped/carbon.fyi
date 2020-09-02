@@ -2,13 +2,19 @@ import Logo from "components/Logo";
 
 export default function Footer() {
   return (
-    <div>
-      <Logo />
+    <footer>
+      <div>
+        <Logo />
+      </div>
       <style jsx>{`
-        div {
+        footer {
           text-align: right;
         }
+
+        div {
+          margin: 0 1rem 1rem;
+        }
       `}</style>
-    </div>
+    </footer>
   );
 }
