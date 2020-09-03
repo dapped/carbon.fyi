@@ -26,7 +26,7 @@ export default function Emissions({ address }: { address: string }) {
       `}</style>
     </>
   ));
-  return paragraphs;
+  return <>{paragraphs}</>;
 }
 
 async function fetcher(url: string) {
