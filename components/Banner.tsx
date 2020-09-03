@@ -7,8 +7,11 @@ interface ItemProps {
 }
 
 export default function Banner({ bannerProps }: { bannerProps: ItemProps[] }) {
-  const createItem = ({ ...itemProps }: ItemProps) => <Item {...itemProps} />;
-  const items = bannerProps.map(createItem);
+  const items = bannerProps.map(
+    ({ ...itemProps }: ItemProps, index: number) => (
+      <Item key={index} {...itemProps} />
+    )
+  );
   return (
     <nav>
       <ul>{items}</ul>
