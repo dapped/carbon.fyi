@@ -19,6 +19,7 @@ export default function Layout(props: { children?: any }) {
     color: "#fe7c6f",
   };
   const bannerProps = [stats, offset, about];
+
   return (
     <>
       <Banner bannerProps={bannerProps} />
