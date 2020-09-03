@@ -11,10 +11,6 @@ export default function Input() {
         </li>
       </ul>
       <style jsx>{`
-        form {
-          margin: 0.5rem auto;
-        }
-
         ul {
           list-style-type: none;
           margin: 0;
@@ -23,22 +19,15 @@ export default function Input() {
 
         li {
           display: flex;
-          flex-wrap: wrap;
+          flex-flow: wrap;
           align-items: center;
-          justify-content: space-between;
+          justify-content: center;
+          gap: 0.5rem;
           margin: 0.5rem 0;
         }
 
-        label {
-          flex-basis: 16rem;
-        }
-
         input {
-          flex: 1;
-        }
-
-        button {
-          margin: auto;
+          flex: auto;
         }
       `}</style>
     </form>
