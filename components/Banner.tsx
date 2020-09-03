@@ -14,16 +14,18 @@ export default function Banner({ bannerProps }: { bannerProps: ItemProps[] }) {
   );
   return (
     <nav>
-      <ul>{items}</ul>
-      <style jsx>{`
-        ul {
-          list-style: none;
-          display: flex;
-          flex-flow: wrap;
-          margin: 0;
-          padding: 0;
-        }
-      `}</style>
+      <ul>
+        {items}
+        <style jsx>{`
+          ul {
+            list-style: none;
+            display: flex;
+            flex-flow: wrap;
+            margin: 0;
+            padding: 0;
+          }
+        `}</style>
+      </ul>
     </nav>
   );
 }

@@ -17,14 +17,14 @@ export default function Emissions({ address }: { address: string }) {
   else text = emissionsText(address, data.result);
 
   const paragraphs = text.map((paragraph: string) => (
-    <>
-      <p>{paragraph}</p>
+    <p>
+      {paragraph}
       <style jsx>{`
         p {
           text-align: center;
         }
       `}</style>
-    </>
+    </p>
   ));
   return <>{paragraphs}</>;
 }
@@ -62,10 +62,10 @@ function emissionsText(address: string, data: Array<Transaction>) {
   return text;
 }
 
-function gasSum(acc: number, cur: Transaction) {
-  return acc + Number(cur.gas);
-}
-
 function consumedGas(res: Transaction[]) {
   return res.reduce(gasSum, 0);
+}
+
+function gasSum(acc: number, cur: Transaction) {
+  return acc + Number(cur.gas);
 }

@@ -9,27 +9,27 @@ export default function Input() {
         <li>
           <button type="submit">Analyze</button>
         </li>
+        <style jsx>{`
+          ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+          }
+
+          li {
+            display: flex;
+            flex-flow: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+          }
+
+          input {
+            flex: auto;
+          }
+        `}</style>
       </ul>
-      <style jsx>{`
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-        }
-
-        li {
-          display: flex;
-          flex-flow: wrap;
-          align-items: center;
-          justify-content: center;
-          gap: 0.5rem;
-          margin: 0.5rem 0;
-        }
-
-        input {
-          flex: auto;
-        }
-      `}</style>
     </form>
   );
 }
