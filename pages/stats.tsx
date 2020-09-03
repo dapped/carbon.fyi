@@ -1,19 +1,22 @@
-import { useRouter } from "next/router";
+import Header from "components/Header";
 import Border from "components/Border";
 
 export default function Home() {
-  const router = useRouter();
-  const query = router.query.a?.toString();
+  const title = "Stats | carbon.fyi";
+  const description = "Under construction...";
   return (
-    <Border>
-      <p>
-        Under construction...
-        <style jsx>{`
-        p {
-          text-align: center;
-        }
-      `}</style>
-      </p>
-    </Border>
+    <>
+      <Header title={title} description={description} />
+      <Border>
+        <p>
+          Under construction...
+          <style jsx>{`
+            p {
+              text-align: center;
+            }
+          `}</style>
+        </p>
+      </Border>
+    </>
   );
 }
