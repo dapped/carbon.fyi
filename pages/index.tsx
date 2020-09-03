@@ -5,7 +5,7 @@ import Emissions from "components/Emissions";
 import Input from "components/Input";
 
 export default function Home() {
-  const title = "ETH CO2 Emissions | carbon.fyi";
+  const title = "Calculate ETH Emissions | carbon.fyi";
   const description = "How much CO2 is associated with your ETH address?";
   const router = useRouter();
   const query = router.query.a?.toString();
