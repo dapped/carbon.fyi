@@ -1,36 +1,47 @@
 # carbon.fyi
 
-[carbon.fyi](https://carbon.fyi/) is an open-source website for calculating the carbon emissions associated with Ethereum addresses.
+[carbon.fyi](https://carbon.fyi/) is an open-source website developed by
+[Offsetra](https://offsetra.com/) for calculating the carbon emissions
+associated with Ethereum addresses.
 
-## Getting started
+## Getting Started
 
 Follow these simple steps to get a local copy up and running.
 
 ### Prerequisites
 
-- The package manager [npm](https://www.npmjs.com/) is required to install dependencies.
-```sh
-npm install npm@latest -g
-```
+- The package manager [npm](https://www.npmjs.com/) is required to install the
+  project's dependencies.
+
+    ```sh
+    npm install npm@latest -g
+    ```
 
 ### Installation
 
-1. Clone the repo (or your fork)
-```sh
-git clone https://github.com/Offsetra/carbon.fyi.git
-```
+1. Clone the repo (or your fork of the repo)
+
+   ```sh
+   git clone https://github.com/Offsetra/carbon.fyi.git
+   ```
+
 2. Navigate to the project directory
-```sh
-cd carbon.fyi
-```
+
+   ```sh
+   cd carbon.fyi
+   ```
+
 3. Install its dependencies
-```sh
-npm install
-```
+
+   ```sh
+   npm install
+   ```
+
 4. Run it on a local webserver
-```sh
-npm run dev
-```
+
+   ```sh
+   npm run dev
+   ```
 
 ## Contributing
 
