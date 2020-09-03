@@ -19,6 +19,7 @@ export default function Header({ title, description }: HeaderProps) {
       <meta property="og:url" content={url} />
       <meta itemProp="name" content={title} />
       <meta itemProp="description" content={description} />
+      <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:site" content="@carbonFYI" />
