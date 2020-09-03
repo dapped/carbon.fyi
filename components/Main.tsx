@@ -3,7 +3,7 @@ export default function Main(props: { children?: any }) {
     <main>
       <div className="wrapper">
         <div className="padding">{props.children}</div>
-      </div>{" "}
+      </div>
       <style jsx>{`
         main {
           flex: auto;

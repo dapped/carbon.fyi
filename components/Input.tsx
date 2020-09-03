@@ -3,8 +3,8 @@ export default function Input() {
     <form>
       <ul>
         <li>
-          <label>Please enter an ETH address:</label>
-          <input type="text" name="a"></input>
+          <label htmlFor="address">Please enter an ETH address:</label>
+          <input type="text" id="address" name="a" required />
         </li>
         <li>
           <button type="submit">Analyze</button>
