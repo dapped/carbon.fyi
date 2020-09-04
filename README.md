@@ -10,42 +10,35 @@ Follow these simple steps to get a local copy up and running.
 
 ### Prerequisites
 
-- The package manager [npm](https://www.npmjs.com/) is required to install the
-  project's dependencies.
+- The package manager [npm](https://www.npmjs.com/)
 
-    ```sh
-    npm install npm@latest -g
-    ```
+      npm install npm@latest -g
 
 ### Installation
 
-1. Clone the repo (or your fork of the repo)
+1. Clone the repository (or your fork of the repository)
 
-   ```sh
-   git clone https://github.com/Offsetra/carbon.fyi.git
-   ```
+       git clone https://github.com/Offsetra/carbon.fyi.git
 
 2. Navigate to the project directory
 
-   ```sh
-   cd carbon.fyi
-   ```
+       cd carbon.fyi
 
 3. Install its dependencies
 
-   ```sh
-   npm install
-   ```
+       npm install
 
 4. Run it on a local webserver
 
-   ```sh
-   npm run dev
-   ```
+       npm run dev
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome. For major changes, please open an issue first to
+discuss what you would like to change.
+
+To make a pull request using the
+[GitHub flow](https://guides.github.com/introduction/flow/):
 
 1. Fork the project
 2. Create a branch (`git checkout -b new-feature`)
@@ -55,8 +48,9 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## License
 
-Distributed under the [Apache Licence 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+Distributed under the
+[Apache Licence 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
 ## Contact
 
-[@carbonFYI](https://twitter.com/carbonFYI)
+[@carbonFYI](https://twitter.com/carbonFYI) - [Offsetra](https://offsetra.com/)
