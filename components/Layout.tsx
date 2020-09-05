@@ -36,7 +36,7 @@ export default function Layout(props: { children?: any }) {
 
         #__next {
           display: flex;
-          flex-direction: column;
+          flex-flow: column;
           min-height: 100vh;
         }
       `}</style>

@@ -1,21 +1,13 @@
 export default function Main(props: { children?: any }) {
   return (
     <main>
-      <div className="wrapper">
-        <div className="padding">{props.children}</div>
-      </div>
+      {props.children}
       <style jsx>{`
         main {
           flex: auto;
-        }
-
-        .wrapper {
+          align-self: center;
+          width: 100%;
           max-width: 50rem;
-          margin: auto;
-        }
-
-        .padding {
-          padding: 0 1rem;
         }
       `}</style>
     </main>

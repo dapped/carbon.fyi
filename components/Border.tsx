@@ -6,7 +6,7 @@ export default function Border(props: { children?: any }) {
         div {
           border: 0.2rem solid #743ee8;
           border-radius: 1.5rem;
-          margin: 1rem;
+          margin: 1rem 2rem;
           padding: 1rem;
         }
       `}</style>
