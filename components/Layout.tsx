@@ -1,6 +1,6 @@
-import Banner from "./Banner";
-import Main from "./Main";
-import Footer from "./Footer";
+import Banner from "components/Banner";
+import Main from "components/Main";
+import Footer from "components/Footer";
 
 export default function Layout(props: { children?: any }) {
   const stats = {
