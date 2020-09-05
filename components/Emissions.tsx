@@ -26,6 +26,7 @@ export default function Emissions({ address }: { address: string }) {
       `}</style>
     </p>
   ));
+
   return <>{paragraphs}</>;
 }
 
