@@ -13,7 +13,7 @@ export default function Emissions({ address }: { address: string }) {
   let text;
   if (error) text = ["Error fetching data."];
   else if (!data) text = ["Fetching data..."];
-  else if (data.status == 0) text = [data.result];
+  else if (data.status === "0") text = [data.result];
   else text = emissionsText(address, data.result);
 
   const paragraphs = text.map((paragraph: string) => (
@@ -39,17 +39,17 @@ function emissionsText(address: string, data: Array<Transaction>) {
   const kgco2_per_gas = 0.0003100393448;
 
   const emittedData = data.filter(
-    (cur: Transaction) => cur.from == address.toLowerCase()
+    (cur: Transaction) => cur.from === address.toLowerCase()
   );
   const emittedNum = emittedData.length;
   const gas = consumedGas(emittedData);
   const kgco2 = Math.round(gas * kgco2_per_gas);
 
   let text = [];
-  if (emittedNum == 0) {
+  if (emittedNum === 0) {
     text.push("0 transactions were sent from this address.");
   } else {
-    if (emittedNum == 1) {
+    if (emittedNum === 1) {
       text.push("1 transaction was sent from this address.");
       text.push(`This transaction consumed ${gas} gas.`);
     } else {
