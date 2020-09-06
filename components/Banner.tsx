@@ -33,13 +33,15 @@ interface ItemProps {
 const ListItem: FC<ItemProps> = ({ href, color, children }) => {
   return (
     <li>
-      <Link href={href}>{children}</Link>
+      <Link href={href}>
+        <a>{children}</a>
+      </Link>
       <style jsx>{`
         li {
           flex: 1;
         }
 
-        li :global(a) {
+        a {
           color: white;
           background: ${color};
           text-decoration: none;
@@ -50,7 +52,8 @@ const ListItem: FC<ItemProps> = ({ href, color, children }) => {
           padding: 0.5rem 1rem;
         }
 
-        li :global(a:hover) {
+        a:hover,
+        a:focus {
           color: ${color};
           background: white;
         }
