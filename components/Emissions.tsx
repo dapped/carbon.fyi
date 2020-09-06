@@ -10,14 +10,14 @@ export default function Emissions({ address }: { address: string }) {
   const api_url = `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&sort=asc&apikey=${api_key}`;
   const { data, error } = useSWR(api_url, fetcher);
 
-  let text;
+  let text: string[];
   if (error) text = ["Error fetching data."];
   else if (!data) text = ["Fetching data..."];
   else if (data.status === "0") text = [data.result];
   else text = emissionsText(address, data.result);
 
-  const paragraphs = text.map((paragraph: string) => (
-    <p>
+  const paragraphs = text.map((paragraph, index) => (
+    <p key={index}>
       {paragraph}
       <style jsx>{`
         p {
