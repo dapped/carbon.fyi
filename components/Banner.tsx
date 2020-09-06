@@ -1,16 +1,17 @@
 import Link from "next/link";
 import { FC } from "react";
+import { colors } from "lib/theme";
 
 const Banner: FC = () => (
   <nav>
     <ul>
-      <ListItem href="/stats" color="#b3e93f">
+      <ListItem href="/stats" color={colors.pear}>
         stats
       </ListItem>
-      <ListItem href="/" color="#743ee8">
+      <ListItem href="/" color={colors.offsetraPurple}>
         offset
       </ListItem>
-      <ListItem href="/about" color="#fe7c6f">
+      <ListItem href="/about" color={colors.salmon}>
         about
       </ListItem>
       <style jsx>{`
