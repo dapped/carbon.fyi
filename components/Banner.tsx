@@ -1,47 +1,45 @@
 import Link from "next/link";
+import { FC } from "react";
+
+const Banner: FC = () => (
+  <nav>
+    <ul>
+      <ListItem href="/stats" color="#b3e93f">
+        stats
+      </ListItem>
+      <ListItem href="/" color="#743ee8">
+        offset
+      </ListItem>
+      <ListItem href="/about" color="#fe7c6f">
+        about
+      </ListItem>
+      <style jsx>{`
+        ul {
+          list-style: none;
+          display: flex;
+          flex-flow: wrap;
+          margin: 0;
+          padding: 0;
+        }
+      `}</style>
+    </ul>
+  </nav>
+);
 
 interface ItemProps {
-  text: string;
-  link: string;
+  href: string;
   color: string;
 }
-
-export default function Banner({ bannerProps }: { bannerProps: ItemProps[] }) {
-  const items = bannerProps.map(
-    ({ ...itemProps }: ItemProps, index: number) => (
-      <Item key={index} {...itemProps} />
-    )
-  );
-  return (
-    <nav>
-      <ul>
-        {items}
-        <style jsx>{`
-          ul {
-            list-style: none;
-            display: flex;
-            flex-flow: wrap;
-            margin: 0;
-            padding: 0;
-          }
-        `}</style>
-      </ul>
-    </nav>
-  );
-}
-
-function Item({ text, link, color }: ItemProps) {
+const ListItem: FC<ItemProps> = ({ href, color, children }) => {
   return (
     <li>
-      <Link href={link}>
-        <a>{text}</a>
-      </Link>
+      <Link href={href}>{children}</Link>
       <style jsx>{`
         li {
           flex: 1;
         }
 
-        a {
+        li :global(a) {
           color: white;
           background: ${color};
           text-decoration: none;
@@ -52,11 +50,12 @@ function Item({ text, link, color }: ItemProps) {
           padding: 0.5rem 1rem;
         }
 
-        a:hover {
+        li :global(a:hover) {
           color: ${color};
           background: white;
         }
       `}</style>
     </li>
   );
-}
+};
+export default Banner;
