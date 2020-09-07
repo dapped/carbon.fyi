@@ -7,7 +7,7 @@ export default function Footer() {
       <style jsx>{`
         footer {
           text-align: right;
-          margin: 0 1rem 1rem;
+          margin: 0 1.6rem 1.6rem;
         }
       `}</style>
     </footer>

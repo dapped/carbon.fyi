@@ -8,7 +8,7 @@ const Main: FC = ({ children }) => (
         flex: auto;
         align-self: center;
         width: 100%;
-        max-width: 50rem;
+        max-width: 80rem;
       }
     `}</style>
   </main>

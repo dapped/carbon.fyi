@@ -21,8 +21,8 @@ export default function Input() {
             flex-flow: wrap;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            margin: 0.5rem 0;
+            gap: 0.8rem;
+            margin: 0.8rem 0;
           }
 
           input {

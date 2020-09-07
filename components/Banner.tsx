@@ -46,11 +46,11 @@ const ListItem: FC<ItemProps> = ({ href, color, children }) => {
           color: white;
           background: ${color};
           text-decoration: none;
-          font-size: 1.25rem;
+          font-size: 2rem;
           font-weight: bold;
           display: flex;
           justify-content: center;
-          padding: 0.5rem 1rem;
+          padding: .8rem 1.6rem;
         }
 
         a:hover,
