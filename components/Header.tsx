@@ -12,6 +12,7 @@ export default function Header({ title, description }: HeaderProps) {
   return (
     <Head>
       <title>{title}</title>
+      <meta name="description" content={description} />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
