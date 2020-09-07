@@ -16,8 +16,6 @@ const Layout: FC = ({ children }) => (
       body {
         font: 1.6rem/1.6 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
           Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
-        margin: 0;
-        padding: 0;
       }
 
       #__next {

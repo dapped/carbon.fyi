@@ -39,7 +39,7 @@ const ListItem: FC<ItemProps> = ({ href, color, children }) => {
       </Link>
       <style jsx>{`
         li {
-          flex: 1;
+          flex: auto;
         }
 
         a {
