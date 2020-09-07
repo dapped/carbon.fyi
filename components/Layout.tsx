@@ -14,9 +14,8 @@ const Layout: FC = ({ children }) => (
       }
 
       body {
-        font: 1.6rem -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        font: 1.6rem/1.6 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
           Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
-        line-height: 1.6;
         margin: 0;
         padding: 0;
       }
