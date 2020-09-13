@@ -6,61 +6,93 @@ interface Transaction {
 }
 
 export default function Emissions({ address }: { address: string }) {
+  const kgco2_per_gas = 0.0003100393448;
   const api_key = process.env.NEXT_PUBLIC_API_KEY;
   const api_url = `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&sort=asc&apikey=${api_key}`;
   const { data, error } = useSWR(api_url, fetcher);
 
-  let text: string[];
-  if (error) text = ["Error fetching data."];
-  else if (!data) text = ["Fetching data..."];
-  else if (data.status === "0") text = [data.result];
-  else text = emissionsText(address, data.result);
+  if (error)
+    return (
+      <p>
+        Error fetching data.
+        <style jsx>{`
+          p {
+            text-align: center;
+          }
+        `}</style>
+      </p>
+    );
 
-  const paragraphs = text.map((paragraph, index) => (
-    <p key={index}>
-      {paragraph}
-      <style jsx>{`
-        p {
-          text-align: center;
-        }
-      `}</style>
-    </p>
-  ));
+  if (!data)
+    return (
+      <p>
+        Fetching data...
+        <style jsx>{`
+          p {
+            text-align: center;
+          }
+        `}</style>
+      </p>
+    );
 
-  return <>{paragraphs}</>;
-}
+  if (data.status === "0")
+    return (
+      <p>
+        data.result
+        <style jsx>{`
+          p {
+            text-align: center;
+          }
+        `}</style>
+      </p>
+    );
 
-async function fetcher(url: string) {
-  const res = await fetch(url);
-  return await res.json();
-}
-
-function emissionsText(address: string, data: Array<Transaction>) {
-  const kgco2_per_gas = 0.0003100393448;
-
-  const emittedData = data.filter(
+  const emittedData = data.result.filter(
     (cur: Transaction) => cur.from === address.toLowerCase()
   );
   const emittedNum = emittedData.length;
   const gas = consumedGas(emittedData);
   const kgco2 = Math.round(gas * kgco2_per_gas);
 
-  let text = [];
-  if (emittedNum === 0) {
-    text.push("0 transactions were sent from this address.");
-  } else {
-    if (emittedNum === 1) {
-      text.push("1 transaction was sent from this address.");
-      text.push(`This transaction consumed ${gas} gas.`);
-    } else {
-      text.push(`${emittedNum} transactions were sent from this address.`);
-      text.push(`These transactions consumed ${gas} gas.`);
-    }
-    text.push(
-      `This emitted the equivalent of ${kgco2} kg of CO₂ into the atmosphere.`
-    );
-  }
-  return text;
+  return (
+    <>
+      {emittedNum === 0 ? (
+        <p>0 transactions were sent from this address.</p>
+      ) : (
+        <>
+          {emittedNum === 1 ? (
+            <>
+              <p>1 transaction was sent from this address.</p>
+              <p>This transaction consumed {gas} gas.</p>
+            </>
+          ) : (
+            <>
+              <p>{emittedNum} transactions were sent from this address.</p>
+              <p>These transactions consumed {gas} gas.</p>
+            </>
+          )}
+          <p>
+            This emitted the equivalent of {kgco2} kg of CO₂ into the
+            atmosphere.
+          </p>
+          <p>
+            Offset this now at{" "}
+            <a href="https://www.offsetra.com/">Offsetra.com</a>.
+          </p>
+        </>
+      )}
+      <style jsx>{`
+        p {
+          text-align: center;
+        }
+      `}</style>
+    </>
+  );
+}
+
+async function fetcher(url: string) {
+  const res = await fetch(url);
+  return await res.json();
 }
 
 function consumedGas(res: Transaction[]) {
