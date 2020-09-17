@@ -38,7 +38,7 @@ export default function Emissions({ address }: { address: string }) {
   if (data.status === "0")
     return (
       <p>
-        data.result
+        {data.result}
         <style jsx>{`
           p {
             text-align: center;
