@@ -79,6 +79,10 @@ export default function Emissions({ address }: { address: string }) {
             Offset this now at{" "}
             <a href="https://www.offsetra.com/">Offsetra.com</a>.
           </p>
+          <p>
+            Consider offsetting a tonne using{" "}
+            <a href="https://commerce.coinbase.com/checkout/092b677f-8217-48be-914d-e5bc266f4d25/">cryptocurrency</a>.
+          </p>
         </>
       )}
       <style jsx>{`
