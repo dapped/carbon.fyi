@@ -81,7 +81,10 @@ export default function Emissions({ address }: { address: string }) {
           </p>
           <p>
             Consider offsetting a tonne using{" "}
-            <a href="https://commerce.coinbase.com/checkout/092b677f-8217-48be-914d-e5bc266f4d25/">cryptocurrency</a>.
+            <a href="https://commerce.coinbase.com/checkout/092b677f-8217-48be-914d-e5bc266f4d25/">
+              cryptocurrency
+            </a>
+            .
           </p>
         </>
       )}
