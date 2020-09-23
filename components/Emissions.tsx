@@ -2,6 +2,7 @@ import useSWR from "swr";
 
 interface Transaction {
   from: string;
+  to: string;
   gas: number;
 }
 
@@ -47,47 +48,62 @@ export default function Emissions({ address }: { address: string }) {
       </p>
     );
 
-  const emittedData = data.result.filter(
+  const outgoingData = data.result.filter(
     (cur: Transaction) => cur.from === address.toLowerCase()
   );
-  const emittedNum = emittedData.length;
-  const gas = consumedGas(emittedData);
-  const kgco2 = Math.round(gas * kgco2_per_gas);
+  const outgoingNum = outgoingData.length;
+  const outgoingGas = consumedGas(outgoingData);
+  const outgoingKgco2 = Math.round(outgoingGas * kgco2_per_gas);
+
+  const incomingData = data.result.filter(
+    (cur: Transaction) => cur.to === address.toLowerCase()
+  );
+  const incomingNum = incomingData.length;
+  const incomingGas = consumedGas(incomingData);
+  const incomingKgco2 = Math.round(incomingGas * kgco2_per_gas);
 
   return (
     <>
-      {emittedNum === 0 ? (
+      {outgoingNum === 0 ? (
         <p>0 transactions were sent from this address.</p>
+      ) : outgoingNum === 1 ? (
+        <p>
+          1 transaction was sent from this address, consuming {outgoingGas} gas
+          and emitting the equivalent of {outgoingKgco2} kg of CO₂ into the
+          atmosphere.
+        </p>
       ) : (
-        <>
-          {emittedNum === 1 ? (
-            <>
-              <p>1 transaction was sent from this address.</p>
-              <p>This transaction consumed {gas} gas.</p>
-            </>
-          ) : (
-            <>
-              <p>{emittedNum} transactions were sent from this address.</p>
-              <p>These transactions consumed {gas} gas.</p>
-            </>
-          )}
-          <p>
-            This emitted the equivalent of {kgco2} kg of CO₂ into the
-            atmosphere.
-          </p>
-          <p>
-            Offset this now at{" "}
-            <a href="https://www.offsetra.com/">Offsetra.com</a>.
-          </p>
-          <p>
-            Consider offsetting a tonne using{" "}
-            <a href="https://commerce.coinbase.com/checkout/092b677f-8217-48be-914d-e5bc266f4d25/">
-              cryptocurrency
-            </a>
-            .
-          </p>
-        </>
+        <p>
+          {outgoingNum} transactions were sent from this address, consuming{" "}
+          {outgoingGas} gas and emitting the equivalent of {outgoingKgco2} kg of
+          CO₂ into the atmosphere.
+        </p>
       )}
+      {incomingNum === 0 ? (
+        <p>0 transactions were sent from this address.</p>
+      ) : incomingNum === 1 ? (
+        <p>
+          1 transaction was received by this address, consuming {incomingGas}{" "}
+          gas and emitting the equivalent of {incomingKgco2} kg of CO₂ into the
+          atmosphere.
+        </p>
+      ) : (
+        <p>
+          {incomingNum} transactions were received by this address, consuming{" "}
+          {incomingGas} gas and emitting the equivalent of {incomingKgco2} kg of
+          CO₂ into the atmosphere.
+        </p>
+      )}
+      <p>
+        Offset this now at <a href="https://www.offsetra.com/">Offsetra.com</a>.
+      </p>
+      <p>
+        Consider offsetting a tonne using{" "}
+        <a href="https://commerce.coinbase.com/checkout/092b677f-8217-48be-914d-e5bc266f4d25/">
+          cryptocurrency
+        </a>
+        .
+      </p>
       <style jsx>{`
         p {
           text-align: center;
