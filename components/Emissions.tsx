@@ -107,5 +107,5 @@ function consumedGas(res: Transaction[]) {
 }
 
 function gasSum(acc: number, cur: Transaction) {
-  return acc + Number(cur.gas);
+  return acc + Number(cur.gasUsed);
 }
